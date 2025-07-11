@@ -31,18 +31,20 @@
          alt="Axali Consulting logo"
          class="mx-auto mb-8 h-16 md:h-24 w-auto" /> 
 
-{{-- HERO title with slow, subtle zoom + gradient shift --}}
-<div class="inline-block animate-[zoomSlow_40s_ease-in-out_infinite]">
+{{-- HERO title: mobile-friendly --}}
+<div class="inline-block animate-[zoomSlow_40s_ease-in-out_infinite] overflow-hidden">
     <h1
-        class="hero-title text-4xl md:text-6xl font-extrabold leading-tight mb-6
-               select-none relative"
+        class="hero-title
+               text-3xl sm:text-4xl md:text-6xl
+               font-extrabold leading-tight mb-6 select-none"
     >
-        Ship&nbsp;Faster.&nbsp;Scale&nbsp;Smarter.
+        <span class="block sm:inline">Ship&nbsp;Faster.</span>
+        <span class="block sm:inline">Scale&nbsp;Smarter.</span>
     </h1>
 </div>
 
 <style>
- 
+    /* --- gradient flow (unchanged) --- */
     .hero-title{
         background: linear-gradient(90deg,#8B5CF6 0%,#EC4899 50%,#6366F1 100%);
         background-size: 300% 300%;
@@ -56,7 +58,7 @@
         100% {background-position: 0% 50%;}
     }
 
- 
+    /* --- slow breathing zoom (unchanged) --- */
     @keyframes zoomSlow{
         0%,100% {transform: scale(1);}
         50%     {transform: scale(1.05);}
