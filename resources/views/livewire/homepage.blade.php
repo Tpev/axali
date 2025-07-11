@@ -31,9 +31,38 @@
          alt="Axali Consulting logo"
          class="mx-auto mb-8 h-16 md:h-24 w-auto" /> 
 
-    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-           Ship Faster. Scale Smarter.
+{{-- HERO title with slow, subtle zoom + gradient shift --}}
+<div class="inline-block animate-[zoomSlow_40s_ease-in-out_infinite]">
+    <h1
+        class="hero-title text-4xl md:text-6xl font-extrabold leading-tight mb-6
+               select-none relative"
+    >
+        Ship&nbsp;Faster.&nbsp;Scale&nbsp;Smarter.
     </h1>
+</div>
+
+<style>
+ 
+    .hero-title{
+        background: linear-gradient(90deg,#8B5CF6 0%,#EC4899 50%,#6366F1 100%);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: heroGradientShift 8s ease-in-out infinite;
+    }
+    @keyframes heroGradientShift{
+        0%   {background-position: 0% 50%;}
+        50%  {background-position:100% 50%;}
+        100% {background-position: 0% 50%;}
+    }
+
+ 
+    @keyframes zoomSlow{
+        0%,100% {transform: scale(1);}
+        50%     {transform: scale(1.05);}
+    }
+</style>
+
 
     <p class="max-w-2xl mx-auto text-lg md:text-2xl text-gray-300 leading-relaxed mb-8">
         Fractional CTO & senior engineering leadership for ambitious startups and growing businesses.
