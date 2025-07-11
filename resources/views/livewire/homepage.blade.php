@@ -39,9 +39,11 @@
         Fractional CTO & senior engineering leadership for ambitious startups and growing businesses.
     </p>
 
-    <p class="max-w-xl mx-auto text-sm md:text-base text-gray-400 mb-10">
-        <strong>Trusted by Series A–C teams</strong> to cut time-to-MVP by 40 % and lower infra spend 30 %.
-    </p>
+<p class="max-w-xl mx-auto text-sm md:text-base text-gray-400 mb-10">
+    <strong>Trusted by founders and their investors</strong> to launch <span class="whitespace-nowrap">production-ready</span> MVPs twice as fast, with code quality that satisfies any senior review.
+</p>
+
+
 
     <a href="#contact"
        class="inline-block px-8 py-4 bg-white text-black rounded-md font-semibold hover:bg-gray-100 transition">
@@ -58,7 +60,9 @@
                 </h3>
                 <p class="text-gray-50 leading-relaxed">
                     Senior leadership on demand — architecture, hiring & roadmap.<br>
-                    <em class="text-indigo-100/90">↓ 30 % cloud costs for fintech client.</em>
+                    <em class="text-indigo-100/90">
+						Guided a fintech through GDPR + SOC-2 while tripling release cadence.
+					</em>
                 </p>
             </div>
 
@@ -69,7 +73,7 @@
                 </h3>
                 <p class="text-gray-50 leading-relaxed">
                     Idea → beta in weeks. MVPs, internal tools, AI agents, automation.<br>
-                    <em class="text-pink-100/90">3-week launch for health-tech startup.</em>
+                    <em class="text-pink-100/90">From whiteboard to cloud-ready launch.</em>
                 </p>
             </div>
 
@@ -114,7 +118,7 @@
                             x-intersect="$el.classList.add('in-view')">
                     <p>“Axali reduced our release cycle from monthly to weekly
                         without increasing burn. Best decision of our Series A.”</p>
-                    <footer class="text-sm text-indigo-300">— Emma Q., CEO @ MedMetrics</footer>
+                    <footer class="text-sm text-indigo-300">— Emma Q., CEO @ ABC</footer>
                 </blockquote>
             </div>
 
