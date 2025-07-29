@@ -6,6 +6,18 @@ use App\Livewire\Careers;
 use App\Livewire\About;
 use App\Livewire\DdChecklist;
 use App\Livewire\Pages\PrivacyTerms;
+use App\Livewire\Admin\{Dashboard, DealBoard, ProjectTable};
+use App\Http\Middleware\EnsureIsAdmin;
+
+
+Route::middleware(['auth', EnsureIsAdmin::class])   
+     ->prefix('admin')
+     ->name('admin.')
+     ->group(function () {
+         Route::get('/',        Dashboard::class)->name('dashboard');
+         Route::get('/deals',   DealBoard::class)->name('deals');
+         Route::get('/projects',ProjectTable::class)->name('projects');
+     });
 
 Route::get('/privacy-terms', PrivacyTerms::class)->name('privacy-terms');
 
