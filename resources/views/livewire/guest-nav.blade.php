@@ -51,15 +51,15 @@
                     <div x-cloak x-show="dropdownSvc" x-transition.origin.top.left
                          class="absolute left-0 mt-3 w-80 rounded-xl border border-gray-200 bg-white shadow-xl">
                         <div class="p-3">
-                            <a href="#cto" class="block rounded-lg p-3 hover:bg-gray-50">
+                            <a href="/#cto" class="block rounded-lg p-3 hover:bg-gray-50">
                                 <p class="font-semibold text-gray-900">Fractional CTO</p>
                                 <p class="text-sm text-gray-600">Architecture, hiring & 90‑day roadmap.</p>
                             </a>
-                            <a href="#sprint" class="block rounded-lg p-3 hover:bg-gray-50">
+                            <a href="/#sprint" class="block rounded-lg p-3 hover:bg-gray-50">
                                 <p class="font-semibold text-gray-900">Rapid Build Sprint</p>
                                 <p class="text-sm text-gray-600">Idea → launch in weeks: MVPs, tools, AI.</p>
                             </a>
-                            <a href="#diligence" class="block rounded-lg p-3 hover:bg-gray-50">
+                            <a href="/#diligence" class="block rounded-lg p-3 hover:bg-gray-50">
                                 <p class="font-semibold text-gray-900">Technical Due Diligence</p>
                                 <p class="text-sm text-gray-600">Risk matrix, remediation plan, confidence score.</p>
                             </a>
@@ -68,7 +68,7 @@
                 </div>
 
                 {{-- Resources dropdown --}}
-                <div class="relative"
+  {{--              <div class="relative"
                      @mouseenter="dropdownRes=true" @mouseleave="dropdownRes=false">
                     <button
                         type="button"
@@ -109,7 +109,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div>--}}
 
                 {{-- Other items from component --}}
                 @foreach ($items as $item)
@@ -132,9 +132,9 @@
 
             {{-- Desktop CTA --}}
             <div class="hidden lg:block">
-                <a href="#contact"
+                <a href="https://calendly.com/tpeverelli-axali-consulting/bring-your-vision-to-market-intro-call-clone"
                    class="rounded-xl px-6 py-3 font-semibold text-white shadow-md transition
-                          bg-gradient-to-r from-[#5B32C1] to-[#6366F1] hover:opacity-95">
+                          bg-gradient-to-r from-[#FF8B38] to-[#FF8B38] hover:opacity-95">
                     Book a Call
                 </a>
             </div>
@@ -174,12 +174,12 @@
                         </svg>
                     </summary>
                     <div class="mt-2 space-y-1">
-                        <a href="#cto" @click="open=false" class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">Fractional CTO</a>
-                        <a href="#sprint" @click="open=false" class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">Rapid Build Sprint</a>
-                        <a href="#diligence" @click="open=false" class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">Technical Due Diligence</a>
+                        <a href="/#cto" @click="open=false" class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">Fractional CTO</a>
+                        <a href="/#sprint" @click="open=false" class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">Rapid Build Sprint</a>
+                        <a href="/#diligence" @click="open=false" class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">Technical Due Diligence</a>
                     </div>
                 </details>
-
+{{-- 
                 {{-- Resources collapsible --}}
                 <details class="group">
                     <summary class="flex cursor-pointer list-none items-center justify-between rounded-lg px-3 py-2 text-gray-800 hover:bg-gray-50">
@@ -203,7 +203,7 @@
                             Trust Center
                         </a>
                     </div>
-                </details>
+                </details> --}}
 
                 {{-- Other items --}}
                 @foreach ($items as $item)
@@ -215,12 +215,13 @@
                 @endforeach
             </div>
 
-            <a href="#contact"
+            <a href="https://calendly.com/tpeverelli-axali-consulting/bring-your-vision-to-market-intro-call-clone"
                @click="open=false"
                class="mt-4 block rounded-xl px-4 py-3 text-center font-semibold text-white
-                      bg-gradient-to-r from-[#5B32C1] to-[#6366F1] shadow-md hover:opacity-95">
+                      bg-gradient-to-r from-[#FF8B38] to-[#FF8B38] hover:opacity-95">
                 Book a Call
             </a>
         </div>
+    </div>
     </div>
 </header>

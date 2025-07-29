@@ -48,9 +48,6 @@ class About extends Component
         ['value' => '12+','label' => 'Years operating'],
         ['value' => '50+','label' => 'Platforms delivered'],
         ['value' => '40+','label' => 'Diligence reviews'],
-        ['value' => '3–4×','label' => 'Release cadence ↑ (typical)'],
-        ['value' => '25–45%','label' => 'Infra cost ↓ after tuning'],
-        ['value' => '< 90 days','label' => 'SOC‑2/HIPAA readiness for selected clients'],
     ];
 
     /** Sectors / Use cases */

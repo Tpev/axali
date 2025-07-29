@@ -198,7 +198,7 @@
 
 <div class="bg-[color:var(--surface)] text-[color:var(--text-700)]" x-data>
   <!-- Sticky CTA -->
-  <a href="#contact" class="sticky-cta">Book a 15‑min Call →</a>
+  <a href="https://calendly.com/tpeverelli-axali-consulting/bring-your-vision-to-market-intro-call-clone" class="sticky-cta">Book a 15‑min Call →</a>
 
   <!-- ===================== HERO (FULL PURPLE) ===================== -->
   <section class="animate-bg text-center py-32 md:py-44 px-6"
@@ -223,7 +223,7 @@
       to launch <span class="whitespace-nowrap">production‑ready</span> products faster, with code quality that stands up to senior review.
     </p>
 
-    <a href="#contact" class="btn-invert">Book a Call →</a>
+    <a href="https://calendly.com/tpeverelli-axali-consulting/bring-your-vision-to-market-intro-call-clone" class="btn-invert">Book a Call →</a>
   </section>
 
   <!-- ===================== SERVICES (white cards) ===================== -->
@@ -299,7 +299,7 @@
       </div>
 
       <div class="text-center mt-12">
-        <a href="#contact" class="btn-secondary">Schedule Intro Call →</a>
+        <a href="https://calendly.com/tpeverelli-axali-consulting/bring-your-vision-to-market-intro-call-clone" class="btn-secondary">Schedule Intro Call →</a>
       </div>
     </div>
   </section>
@@ -307,7 +307,7 @@
   <div class="divider"></div>
 
   <!-- ===================== FRACTIONAL CTO PROCESS ===================== -->
-  <section class="section">
+  <section id="cto" class="section">
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-3xl md:text-4xl font-bold text-[color:var(--text-900)] text-center mb-16">
         Fractional&nbsp;CTO – Engagement Flow
@@ -355,7 +355,7 @@
       </div>
 
       <div class="text-center mt-16">
-        <a href="#contact" class="btn-primary">Book a Fractional&nbsp;CTO Intro →</a>
+        <a href="https://calendly.com/tpeverelli-axali-consulting/due-dilligence-intro-call-clone" class="btn-primary">Book a Fractional&nbsp;CTO Intro →</a>
       </div>
     </div>
   </section>
@@ -422,7 +422,7 @@
   </section>
 
   <!-- ===================== RAPID BUILD SPRINT ===================== -->
-  <section class="section">
+  <section id="sprint" class="section">
     <div class="max-w-5xl mx-auto px-6">
       <h2 class="text-3xl md:text-4xl font-bold text-[color:var(--text-900)] text-center mb-16">
         Rapid&nbsp;Build – 4‑Week Sprint
@@ -468,7 +468,7 @@
       </div>
 
       <div class="text-center mt-16">
-        <a href="#contact" class="btn-primary">Start My Sprint →</a>
+        <a href="https://calendly.com/tpeverelli-axali-consulting/fractional-cto-senior-engineering-leadership-clone" class="btn-primary">Start My Sprint →</a>
       </div>
     </div>
   </section>
@@ -486,7 +486,7 @@
   </section>
 
   <!-- ===================== TECH OVERSIGHT / AUDIT (PURPLE) ===================== -->
-  <section class="section section--purple text-center px-6">
+  <section id="diligence" class="section section--purple text-center px-6">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold mb-6">
         Technical Oversight & Future‑Proof Audits
@@ -495,7 +495,7 @@
         Vendor selection, stack reviews, SOC‑2 paths — we de‑risk decisions before they grow expensive.
       </p>
       <p class="mb-10">Pay once, save quarters of re‑work.</p>
-      <a href="#contact" class="btn-invert">Get an Audit Quote →</a>
+      <a href="https://calendly.com/tpeverelli-axali-consulting/30min" class="btn-invert">Get an Audit Quote →</a>
     </div>
   </section>
 
@@ -541,7 +541,7 @@
       </div>
 
       <div class="text-center mt-16">
-        <a href="#contact" class="btn-invert">Request Due‑Diligence Quote →</a>
+        <a href="https://calendly.com/tpeverelli-axali-consulting/30min" class="btn-invert">Request Due‑Diligence Quote →</a>
       </div>
     </div>
   </section>
@@ -558,6 +558,7 @@
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="py-10 text-center text-[color:var(--text-500)] text-sm divider">
-    © Axali Consulting — All rights reserved.
+    © Axali Consulting — All rights reserved. | <li><a href="{{ route('privacy-terms') }}" class="hover:underline">Privacy & T&amp;C</a></li>
+
   </footer>
 </div>

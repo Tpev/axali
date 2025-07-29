@@ -5,6 +5,9 @@ use App\Livewire\Homepage;
 use App\Livewire\Careers;
 use App\Livewire\About;
 use App\Livewire\DdChecklist;
+use App\Livewire\Pages\PrivacyTerms;
+
+Route::get('/privacy-terms', PrivacyTerms::class)->name('privacy-terms');
 
 Route::get('/dd-checklist', DdChecklist::class)->name('dd-checklist');
 

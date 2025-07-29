@@ -40,7 +40,7 @@
         }
         .ax-btn{
             display:inline-block; border-radius:12px; font-weight:600; padding:.95rem 1.4rem;
-            color:#fff; background:linear-gradient(90deg,var(--axali-purple),var(--axali-indigo));
+            color:#fff; background:linear-gradient(90deg,var(--axali-orange),var(--axali-orange));
             box-shadow:0 10px 24px rgba(91,50,193,.22); transition:opacity .2s ease, transform .08s ease;
         }
         .ax-btn:hover{ opacity:.95; } .ax-btn:active{ transform:translateY(1px); }
@@ -64,11 +64,7 @@
             Axali is a senior engineering and strategy firm partnering with US founders and investors.
             We accelerate delivery, reduce operational risk, and achieve compliance without slowing momentum.
         </p>
-        <div class="mt-10 flex flex-wrap gap-3 justify-center">
-            <span class="ax-pill">US‑first delivery</span>
-            <span class="ax-pill">EU overlap optional</span>
-            <span class="ax-pill">Outcome‑driven engagements</span>
-        </div>
+
         <div class="mt-12">
             <a href="#principles" class="ax-btn">Our principles</a>
         </div>
@@ -138,9 +134,7 @@
                     </div>
                 @endforeach
             </div>
-            <div class="text-center mt-12">
-                <a href="/trust" class="ax-btn">Visit Trust Center</a>
-            </div>
+
         </div>
     </section>
 
@@ -151,6 +145,6 @@
             If you need senior leadership that moves fast and de‑risks delivery, we can help.
             We’ll align scope, KPIs, and a start date.
         </p>
-        <a href="#contact" class="mt-8 inline-block ax-btn">Book a call</a>
+        <a href="https://calendly.com/tpeverelli-axali-consulting/bring-your-vision-to-market-intro-call-clone" class="mt-8 inline-block ax-btn">Book a call</a>
     </section>
 </div>

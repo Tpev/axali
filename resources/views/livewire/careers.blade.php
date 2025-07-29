@@ -69,6 +69,12 @@
         .faq summary::-webkit-details-marker{ display:none; }
 
         .list-tight li{ margin-bottom:.5rem; }
+		
+		        .ax1-btn{
+            display:inline-block; border-radius:12px; font-weight:600; padding:.9rem 1.4rem; transition:opacity .2s ease, transform .08s ease;
+            color:#fff; background:linear-gradient(90deg,var(--axali-orange),var(--axali-orange));
+            box-shadow:0 10px 24px rgba(91,50,193,.22);
+        }
     </style>
 
     <!-- HERO (purple behind transparent nav) -->
@@ -84,7 +90,7 @@
             <span class="ax-pill">Senior expertise only</span>
         </div>
         <div class="mt-12">
-            <a href="#roles" class="ax-btn">View open roles</a>
+            <a href="#roles" class="ax1-btn">View open roles</a>
         </div>
     </section>
 
@@ -150,14 +156,18 @@
                         @endif
 
                         <div class="mt-8">
-                            <button
-                                type="button"
-                                class="ax-btn"
-                                wire:click="applyFor('{{ $role['slug'] }}')"
-                                x-on:click="$el.scrollIntoView({behavior:'smooth',block:'center'})"
-                            >
-                                Apply for {{ $role['title'] }}
-                            </button>
+<button
+    type="button"
+    class="ax-btn"
+    wire:click="applyFor('{{ $role['slug'] }}')"
+    x-on:click="$nextTick(() =>
+        document.getElementById('apply')
+                .scrollIntoView({ behavior: 'smooth', block: 'start' })
+    )"
+>
+    Apply for {{ $role['title'] }}
+</button>
+
                         </div>
                     </article>
                 @endforeach
