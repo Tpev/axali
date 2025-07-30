@@ -179,31 +179,7 @@
                         <a href="/#diligence" @click="open=false" class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">Technical Due Diligence</a>
                     </div>
                 </details>
-{{-- 
-                {{-- Resources collapsible --}}
-                <details class="group">
-                    <summary class="flex cursor-pointer list-none items-center justify-between rounded-lg px-3 py-2 text-gray-800 hover:bg-gray-50">
-                        <span class="font-medium">Resources</span>
-                        <svg class="h-5 w-5 transition-transform group-open:rotate-180" xmlns="http://www.w3.org/2000/svg"
-                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </summary>
-                    <div class="mt-2 space-y-1">
-                        <a href="/resources/dd-checklist" @click="open=false" class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">
-                            DD Checklist (PDF)
-                        </a>
-                        <a href="/resources/architecture-review-template" @click="open=false" class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">
-                            Architecture Review Template
-                        </a>
-                        <a href="/insights" @click="open=false" class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">
-                            Insights
-                        </a>
-                        <a href="/trust" @click="open=false" class="block rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-50">
-                            Trust Center
-                        </a>
-                    </div>
-                </details> --}}
+
 
                 {{-- Other items --}}
                 @foreach ($items as $item)
