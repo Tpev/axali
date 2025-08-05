@@ -3,76 +3,64 @@
 namespace App\Livewire\Admin;
 
 use Livewire\Component;
-use Livewire\Attributes\Url;
-use App\Models\{Deal, DealStageSnapshot, User};
+use App\Models\Deal;
+use App\Models\User;
 
 class DealBoard extends Component
 {
-    /* ── Static stage list ────────────────────────────────────── */
-    public array $stages = ['lead', 'quoted', 'active', 'closing', 'won', 'lost'];
+    /* Filters */
+    public string $search = '';
+    public string $owner  = 'all';
 
-    /* ── URL‑persisted filters ───────────────────────────────── */
-    #[Url] public string $search = '';
-    #[Url] public string $owner  = 'all';
+    /* UI state */
+    public ?int $dealId   = null;   // null = no selection
+    public bool $open     = false;  // sidebar visibility
 
-    /* ── UI state ─────────────────────────────────────────────── */
-    public ?int $detail = null;                       // selected deal ID
-
-    /* ── Sparkline mini‑charts (last 30 days) ────────────────── */
-    public array $sparkline = [];
-
-    public function mount(): void
-    {
-        $snap = DealStageSnapshot::whereBetween('date', [now()->subDays(29), now()])
-            ->orderBy('date')
-            ->get()
-            ->groupBy('stage');
-
-        foreach ($this->stages as $s) {
-            $this->sparkline[$s] = ($snap[$s] ?? collect())->pluck('count')->all();
-        }
-    }
-
-    /* ── Card click / close ──────────────────────────────────── */
+    /* Actions */
     public function selectDeal(int $id): void
     {
-        $this->detail = $id;
+        $this->dealId = $id;
+        $this->open   = true;       // show sidebar
     }
 
-    public function closeDetail(): void
+    public function close(): void
     {
-        $this->detail = null;
+        $this->open = false;        // hide sidebar, keep ID
     }
 
-    /* ── Utility: age in current stage ───────────────────────── */
+    /* Helpers */
+    public function getDealProperty(): ?Deal
+    {
+        return $this->dealId ? Deal::with('customer','owner')->find($this->dealId) : null;
+    }
+
     public function ageInStage(Deal $d): int
     {
-        $last = $d->stageChanges()->latest('changed_at')->first();
-
-        return $last
-            ? now()->diffInDays($last->changed_at)
-            : now()->diffInDays($d->created_at);
+        return now()->diffInDays($d->stage_updated_at ?? $d->created_at);
     }
 
-    /* ── Render ──────────────────────────────────────────────── */
+    /* View */
     public function render()
     {
-        $deals = Deal::with(['customer', 'owner', 'stageChanges'])
-            ->when($this->search, fn ($q) =>
-                $q->where('name', 'like', "%{$this->search}%")
-                  ->orWhereHas('customer', fn ($qq) =>
-                      $qq->where('company_name', 'like', "%{$this->search}%")))
-            ->when($this->owner !== 'all', fn ($q) =>
-                $q->where('owner_id', $this->owner))
-            ->get()
-            ->groupBy('stage');
+        $owners = User::all();
+        $stages = ['lead','qualified','proposal','negotiation','won','lost'];
+        $board  = $spark = [];
 
-        return view('livewire.admin.deal-board', [
-            'board'    => $deals,
-            'owners'   => User::where('is_admin', true)->get(['id', 'name']),
-            'selected' => $this->detail
-                ? Deal::with(['customer', 'owner', 'stageChanges'])->find($this->detail)
-                : null,
-        ])->layout('layouts.admin', ['title' => 'Deals']);
+        foreach ($stages as $s) {
+            $spark[$s] = collect(range(1,7))->map(fn()=>rand(1,10));
+
+            $q = Deal::whereRaw('LOWER(stage)=?',[$s]);
+            if ($this->search)         $q->where('name','like',"%{$this->search}%");
+            if ($this->owner!=='all')  $q->where('owner_id',$this->owner);
+
+            $board[$s] = $q->get();
+        }
+
+        return view('livewire.admin.deal-board',[
+            'owners'=>$owners,
+            'stages'=>$stages,
+            'board' =>$board,
+            'spark' =>$spark,
+        ])->layout('layouts.admin');
     }
 }

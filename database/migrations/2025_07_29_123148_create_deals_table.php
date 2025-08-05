@@ -15,7 +15,7 @@ Schema::create('deals', function (Blueprint $table) {
     $table->id();
     $table->foreignId('customer_id')->constrained();
     $table->string('name');
-    $table->enum('stage', ['lead','quoted','active','closing','won','lost'])->index();
+    $table->enum('stage', ['lead','qualified','proposal','negotiation','won','lost'])->index();
     $table->decimal('value_est', 15, 2)->nullable();
     $table->foreignId('quote_id')->nullable()->constrained();
     $table->foreignId('invoice_id')->nullable()->constrained();

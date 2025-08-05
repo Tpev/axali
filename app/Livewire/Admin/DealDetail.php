@@ -5,26 +5,21 @@ namespace App\Livewire\Admin;
 use Livewire\Component;
 use App\Models\Deal;
 
-/**
- * Read‑only slide‑over showing full deal info.
- * It never mutates itself; on close it simply triggers a JS event that
- * the parent board listens to.
- */
 class DealDetail extends Component
 {
-    public Deal $deal;
+    public ?int $dealId = null;  // nullable keeps Livewire happy
 
-    public function mount(int $dealId): void
+    public function getDealProperty(): ?Deal
     {
-        $this->deal = Deal::with([
-            'customer',
-            'owner',
-            'stageChanges' => fn ($q) => $q->latest('changed_at'),
-        ])->findOrFail($dealId);
+        return $this->dealId
+            ? Deal::with('customer', 'owner')->find($this->dealId)
+            : null;
     }
 
     public function render()
     {
-        return view('livewire.admin.deal-detail');
+        return view('livewire.admin.deal-detail', [
+            'deal' => $this->deal,   // access via computed property
+        ]);
     }
 }

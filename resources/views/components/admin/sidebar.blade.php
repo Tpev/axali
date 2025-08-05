@@ -3,6 +3,7 @@
         ['label'=>'Dashboard', 'route'=>'admin.dashboard', 'icon'=>'o-home'],
         ['label'=>'Deals',     'route'=>'admin.deals',     'icon'=>'o-briefcase'],
         ['label'=>'Projects',  'route'=>'admin.projects',  'icon'=>'o-view-columns'],
+		['label'=>'Companies', 'route'=>'admin.companies',  'icon'=>'o-building-office-2'],
     ];
 @endphp
 
